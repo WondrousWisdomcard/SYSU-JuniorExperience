@@ -1,0 +1,184 @@
+fileFormatVersion: 2
+guid: b44f3940c4940544a8c2c6aee5fa086f
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Head
+    100002: HeadEND
+    100004: Hips
+    100006: JohnLemon
+    100008: //RootNode
+    100010: LeftArm
+    100012: LeftCalf
+    100014: LeftEye
+    100016: LeftEyebrow
+    100018: LeftEyelidDown
+    100020: LeftEyelidUp
+    100022: LeftFoorEND
+    100024: LeftFoot
+    100026: LeftForeArm
+    100028: LeftHand
+    100030: LeftHandEND
+    100032: LeftLeg
+    100034: LeftShoulder
+    100036: Mouth
+    100038: Neck
+    100040: RightArm
+    100042: RightCalf
+    100044: RightEye
+    100046: RightEyebrow
+    100048: RightEyelidDown
+    100050: RightEyelidUp
+    100052: RightFoorEND
+    100054: RightFoot
+    100056: RightForeArm
+    100058: RightHand
+    100060: RightHandEND
+    100062: RightLeg
+    100064: RightShoulder
+    100066: Root
+    100068: Spine1
+    100070: Spine2
+    400000: Head
+    400002: HeadEND
+    400004: Hips
+    400006: JohnLemon
+    400008: //RootNode
+    400010: LeftArm
+    400012: LeftCalf
+    400014: LeftEye
+    400016: LeftEyebrow
+    400018: LeftEyelidDown
+    400020: LeftEyelidUp
+    400022: LeftFoorEND
+    400024: LeftFoot
+    400026: LeftForeArm
+    400028: LeftHand
+    400030: LeftHandEND
+    400032: LeftLeg
+    400034: LeftShoulder
+    400036: Mouth
+    400038: Neck
+    400040: RightArm
+    400042: RightCalf
+    400044: RightEye
+    400046: RightEyebrow
+    400048: RightEyelidDown
+    400050: RightEyelidUp
+    400052: RightFoorEND
+    400054: RightFoot
+    400056: RightForeArm
+    400058: RightHand
+    400060: RightHandEND
+    400062: RightLeg
+    400064: RightShoulder
+    400066: Root
+    400068: Spine1
+    400070: Spine2
+    2100000: lambert1
+    2100002: JohnToon
+    2100004: JohnPBR
+    4300000: JohnLemon
+    9500000: //RootNode
+    13700000: JohnLemon
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: JohnPBR
+    second: {fileID: 2100000, guid: ec8dc473ea10be74bada0165e17a99d9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: JohnToon
+    second: {fileID: 2100000, guid: a0f36fc0d25b946499ac2f95f2b6ab9b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: a0f36fc0d25b946499ac2f95f2b6ab9b, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 2
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: Root
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

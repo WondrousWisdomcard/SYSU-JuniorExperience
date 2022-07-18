@@ -1,0 +1,146 @@
+fileFormatVersion: 2
+guid: 563ac48ff656d49478fd93213f4c0eb8
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Eye
+    100002: EyeEND
+    100004: Ghost
+    100006: //RootNode
+    100008: Hat
+    100010: HatEND
+    100012: Head
+    100014: LeftArm
+    100016: LeftForeArm
+    100018: LeftHand
+    100020: LeftHandEND
+    100022: RightArm
+    100024: RightForeArm
+    100026: RightHand
+    100028: RightHandEND
+    100030: Root
+    100032: Spine
+    100034: Spine2
+    100036: Tail
+    100038: Tail2
+    100040: Tail3
+    100042: TailEND
+    400000: Eye
+    400002: EyeEND
+    400004: Ghost
+    400006: //RootNode
+    400008: Hat
+    400010: HatEND
+    400012: Head
+    400014: LeftArm
+    400016: LeftForeArm
+    400018: LeftHand
+    400020: LeftHandEND
+    400022: RightArm
+    400024: RightForeArm
+    400026: RightHand
+    400028: RightHandEND
+    400030: Root
+    400032: Spine
+    400034: Spine2
+    400036: Tail
+    400038: Tail2
+    400040: Tail3
+    400042: TailEND
+    2100000: lambert1
+    2300000: Ghost
+    3300000: Ghost
+    4300000: Ghost
+    9500000: //RootNode
+    13700000: Ghost
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 8f87494fdf66565419fa381814c5129b, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.7
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: Root
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

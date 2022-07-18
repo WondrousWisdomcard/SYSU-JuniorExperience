@@ -1,0 +1,44 @@
+# REAL RESULT
+
+Gold:
+['PM', 'SM', 0.556]
+['PS', 'SM', 0.625]
+['PS PM', 'SM', 0.625]
+['NM', 'BM', 0.545]
+['NS', 'BM', 0.545]
+['NM NS', 'BM', 0.545]
+Bitcoin:
+['NL', 'BB', '0.472']
+['PL', 'BB', 0.384]
+
+# OUR RESULT
+
+Gold:
+['PM', 'BM', 0.556]
+['PS', 'BM', 0.625]
+['PS PM', 'BM', 0.625]
+['NM', 'SM', 0.545]
+['NS', 'SM', 0.545]
+['NM NS', 'SM', 0.545]
+Bitcoin:
+['NL', 'BB', '0.472']
+['PL', 'SB', 0.384]
+
+黄金：
+
+ci = [大卖, 中卖, 小卖, 持平, 小买, 中买, 大买]
+ci = [-4m, -2m, -1m, 0, 1m, 2m, 4m]
+
+黄金：
+大涨时选择中买
+中涨时选择中买
+大跌时选择中卖
+中跌时选择中卖
+
+ed(x) = 2m * mu_pl + 2m * mu_pm + -2m * mu_nl + -2m * mu_nm / mu_pl + mu_pm + mu_nl + mu_nm
+
+比特币：
+大涨时选择大买
+大跌时选择大卖
+
+ed(x) = 4m * mu_pl + -4m * mu_nl / mu_pl + mu_nl 
