@@ -1,0 +1,48 @@
+/* Test: 变量声明 */
+int a, b, c; 
+float e, f;
+
+/* Test: 赋值 */
+a := 7;
+b := -10;
+c := 5;
+e := 0.15;
+
+
+/* Test: 读写 read / write */
+read f;
+write "hey";
+
+
+/* Test: 逻辑运算符 and or not */
+if not (a > 0 and not b > 0) then
+	write 'N';
+end;
+	
+/* Test: 布尔变量 true false */
+if true or false or c >= 0 then
+	b := f * d;
+end;
+
+
+/* Test: 嵌套 */
+/* Test: if 语句 */
+if a >= b and a < c then
+	/* Test: if-else 语句 */ 
+	if a >= 5 and a = c then 
+		/* Test: while 语句 */
+		while a < 1000 do 
+			a := a + 1; 
+		end; 
+	else
+		/* Test: repeat 语句 */
+		repeat 
+			a := a + b * 2;
+		until a < 2000;
+	end;
+end;
+
+/* Test: 运算 */
+a := a + b * (c - d);
+
+

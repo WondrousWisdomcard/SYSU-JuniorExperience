@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "express": "^4.17.2",
+    "nodejs-sdk": "https://gitee.com/FISCO-BCOS/nodejs-sdk.git#master",
+    "solc": "^0.4.24"
+  }
+}

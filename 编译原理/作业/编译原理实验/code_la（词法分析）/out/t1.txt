@@ -1,0 +1,43 @@
+
+
+Find (KEY, or)
+Find (KEY, and)
+Find (KEY, int)
+Find (KEY, bool)
+Find (KEY, char)
+
+Find (KEY, while)
+Find (KEY, do)
+Find (KEY, if)
+Find (KEY, then)
+Find (KEY, else)
+Find (KEY, not)
+
+Find (KEY, end)
+Find (KEY, repeat)
+Find (KEY, until)
+Find (ID, read)
+Find (ID, write)
+
+Find (SYM, ,)
+Find (SYM, ;)
+Find (SYM, :=)
+Find (SYM, +)
+Find (SYM, -)
+
+Find (SYM, *)
+Find (SYM, /)
+Find (SYM, ()
+Find (SYM, ))
+Find (SYM, <)
+
+Find (SYM, =)
+Find (SYM, >)
+Find (SYM, >=)
+Find (SYM, <=)
+Find (ID, a2c)
+Find (INT, 123)
+Find (CHAR, 'E')
+Find (STRING, "ABC")
+
+

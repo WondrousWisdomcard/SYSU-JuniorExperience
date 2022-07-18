@@ -1,0 +1,7 @@
+Input File: 
+in/t3.txt
+Line 01: 
+Line 02: 
+Line 03: [int] [t1] [,] [t2] [,] [t3] 
+Error at Line 04: syntax error, unexpected TYPE, expecting ';'
+Line 04: [int] [varlist] [varlist] [varlist] [declaration] 

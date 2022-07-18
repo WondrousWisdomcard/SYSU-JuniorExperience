@@ -1,0 +1,38 @@
+Symbol Table 
+      TYPE       ID        VAL
+  0    int       t1           
+  1    int       t2           
+  2    int       t3           
+  3    int      ite           
+
+Code:
+_t0 = 0
+t1 = _t0
+Label 008:
+_t1 = 1
+t2 = _t1
+Label 007:
+Read ite
+Label 006:
+Label 003:
+_t2 = 0
+_t3 = ite > _t2
+_t4 = _t3
+If-not _t4 Goto Label 005    
+_t5 = 1
+_t6 = ite - _t5
+ite = _t6
+Label 002:
+_t7 = t1 + t2
+t3 = _t7
+Label 001:
+t1 = t2
+Label 000:
+t2 = t3
+Goto Label 003
+Label 005:
+_t8 = 'Result of Fibonacci is: '
+Write _t8
+Label 004:
+Write t3
+

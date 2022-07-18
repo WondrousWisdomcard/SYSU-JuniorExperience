@@ -1,0 +1,32 @@
+Input File: 
+in/t2.txt
+
+Symbol Table 
+      TYPE       ID        VAL
+  0    int        a           
+  1    int        b           
+  2    int        c           
+  3  float        d           
+  4  float        e           
+  5  float        f           
+  6   char        g           
+  7   char        h           
+  8   char        i           
+  9 string        j           
+ 10 string        k           
+ 11 string        l           
+ 12   bool        x           
+ 13   bool        y           
+ 14   bool        z           
+
+Code:
+_t0 = d + a
+d = _t0
+Label 001:
+_t1 = 1
+_t2 = _t1 * f
+e = _t2
+Label 000:
+_t3 = a - b
+f = _t3
+

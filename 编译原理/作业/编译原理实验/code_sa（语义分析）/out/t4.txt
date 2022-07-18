@@ -1,0 +1,4 @@
+Input File: 
+in/t4.txt
+Error at Line 05: 重复定义变量 t1
+

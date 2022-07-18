@@ -1,0 +1,124 @@
+max@ubuntu:~/Desktop/manhattan-transfer/编译原理实验/code_ga$ ./ga.out
+Input File: 
+in/t2.txt
+Line 01: 
+Line 02: 
+Line 03: [int] [t1] [,] [t2] [,] [t3] [;] [varlist] [varlist] [varlist] [declaration] 
+Line 04: [int] [ite] [;] [varlist] [declaration] 
+Line 05: 
+Line 06: [t1] [declarations] [declarations] [:=] [0] [arithexp] [;] [xstmt] 
+Line 07: [t2] [:=] [1] [arithexp] [;] [xstmt] 
+Line 08: 
+Line 09: [read] [ite] [xstmt] [;] 
+Line 10: 
+Line 11: [while] [ite] [arithexp] [>] [0] [arithexp] [do] [comparison] [boolexp] 
+Line 12: [ite] [:=] [ite] [arithexp] [-] [1] [arithexp] [;] [arithexp] [xstmt] 
+Line 13: [t3] [:=] [t1] [arithexp] [+] [t2] [arithexp] [;] [arithexp] [xstmt] 
+Line 14: [t1] [:=] [t2] [arithexp] [;] [xstmt] 
+Line 15: [t2] [:=] [t3] [arithexp] [;] [xstmt] 
+Line 16: [end] [xstmt] [xstmt] [xstmt] [xstmt] [xstmt] [;] 
+Line 17: 
+Line 18: [write] ["Result of Fibonacci is: "] [strexp] [writexstmt] [;] 
+Line 19: [write] [t3] [arithexp] [;] [writexstmt] 
+Line 20: [xstmt] [xstmt] [xstmt] [xstmt] [xstmt] [xstmt] [program] 
+Syntax Tree:
+(0,1) program 
+   (1,1) declarations 
+      (2,1) declaration 
+         (3,1) int 
+         (3,2) varlist 
+            (4,1) t1 
+            (4,2) , 
+            (4,3) varlist 
+               (5,1) t2 
+               (5,2) , 
+               (5,3) varlist 
+                  (6,1) t3 
+      (2,2) ; 
+      (2,3) declarations 
+         (3,1) declaration 
+            (4,1) int 
+            (4,2) varlist 
+               (5,1) ite 
+         (3,2) ; 
+   (1,2) xstmt 
+      (2,1) xstmt 
+         (3,1) t1 
+         (3,2) := 
+         (3,3) arithexp 
+            (4,1) 0 
+      (2,2) ; 
+      (2,3) xstmt 
+         (3,1) xstmt 
+            (4,1) t2 
+            (4,2) := 
+            (4,3) arithexp 
+               (5,1) 1 
+         (3,2) ; 
+         (3,3) xstmt 
+            (4,1) xstmt 
+               (5,1) read 
+               (5,2) ite 
+            (4,2) ; 
+            (4,3) xstmt 
+               (5,1) xstmt 
+                  (6,1) while 
+                  (6,2) boolexp 
+                     (7,1) comparison 
+                        (8,1) arithexp 
+                           (9,1) ite 
+                        (8,2) > 
+                        (8,3) arithexp 
+                           (9,1) 0 
+                  (6,3) do 
+                  (6,4) xstmt 
+                     (7,1) xstmt 
+                        (8,1) ite 
+                        (8,2) := 
+                        (8,3) arithexp 
+                           (9,1) arithexp 
+                              (10,1) ite 
+                           (9,2) - 
+                           (9,3) arithexp 
+                              (10,1) 1 
+                     (7,2) ; 
+                     (7,3) xstmt 
+                        (8,1) xstmt 
+                           (9,1) t3 
+                           (9,2) := 
+                           (9,3) arithexp 
+                              (10,1) arithexp 
+                                 (11,1) t1 
+                              (10,2) + 
+                              (10,3) arithexp 
+                                 (11,1) t2 
+                        (8,2) ; 
+                        (8,3) xstmt 
+                           (9,1) xstmt 
+                              (10,1) t1 
+                              (10,2) := 
+                              (10,3) arithexp 
+                                 (11,1) t2 
+                           (9,2) ; 
+                           (9,3) xstmt 
+                              (10,1) xstmt 
+                                 (11,1) t2 
+                                 (11,2) := 
+                                 (11,3) arithexp 
+                                    (12,1) t3 
+                              (10,2) ; 
+                  (6,5) end 
+               (5,2) ; 
+               (5,3) xstmt 
+                  (6,1) writexstmt 
+                     (7,1) write 
+                     (7,2) strexp 
+                        (8,1) "Result of Fibonacci is: " 
+                  (6,2) ; 
+                  (6,3) xstmt 
+                     (7,1) writexstmt 
+                        (8,1) write 
+                        (8,2) arithexp 
+                           (9,1) t3 
+                     (7,2) ; 
+

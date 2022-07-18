@@ -1,0 +1,9 @@
+/* -- test3 -- */
+
+& $ . ~
+hihi "
+hihi */
+" hihi
+/* hihi
+'a
+a'

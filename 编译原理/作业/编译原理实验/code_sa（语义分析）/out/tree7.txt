@@ -1,0 +1,69 @@
+digraph demo{
+node [shape=box, style="rounded", color="black", fontname="Microsoft YaHei"];
+edge [fontname="Microsoft YaHei"];
+id36[label="program"]
+id35[label="xstmt"]
+id3[label="writexstmt"]
+id0[label="write"]
+id3->id0
+id2[label="'no declaration'(string)"]
+id1[label="'no declaration'(string)"]
+id2->id1
+id3->id2
+id35->id3
+id34[label="xstmt"]
+id32[label="xstmt"]
+id5[label="if"]
+id32->id5
+id17[label="boolexp(bool)"]
+id16[label="comparison(bool)"]
+id12[label="arithexp(int)"]
+id7[label="1(int)"]
+id6[label="1(int)"]
+id7->id6
+id12->id7
+id8[label="+"]
+id12->id8
+id10[label="1(int)"]
+id9[label="1(int)"]
+id10->id9
+id12->id10
+id16->id12
+id11[label="<"]
+id16->id11
+id14[label="3(int)"]
+id13[label="3(int)"]
+id14->id13
+id16->id14
+id17->id16
+id32->id17
+id15[label="then"]
+id32->id15
+id24[label="xstmt"]
+id21[label="writexstmt"]
+id18[label="write"]
+id21->id18
+id20[label="'1 + 1 < 3'(string)"]
+id19[label="'1 + 1 < 3'(string)"]
+id20->id19
+id21->id20
+id24->id21
+id32->id24
+id23[label="else"]
+id32->id23
+id31[label="xstmt"]
+id28[label="writexstmt"]
+id25[label="write"]
+id28->id25
+id27[label="'1 + 1 >= 3'(string)"]
+id26[label="'1 + 1 >= 3'(string)"]
+id27->id26
+id28->id27
+id31->id28
+id32->id31
+id30[label="end"]
+id32->id30
+id34->id32
+id35->id34
+id36->id35
+}

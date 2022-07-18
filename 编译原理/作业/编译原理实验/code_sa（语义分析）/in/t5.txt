@@ -1,0 +1,20 @@
+/* 求解 Fibonacci 数列 */
+/* 非法l的类型转换 */
+
+int t1, t2, t3;
+int ite; /* 迭代次数 */
+
+t1 := 0.0; /* Here */
+t2 := 1;
+
+read ite;
+
+while ite > 0 do
+	ite := ite - 1;
+	t3 := t1 + t2;
+	t1 := t2;
+	t2 := t3;
+end;
+
+write "Result of Fibonacci is: ";
+write t3;

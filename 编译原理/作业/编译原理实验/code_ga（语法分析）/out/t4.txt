@@ -1,0 +1,9 @@
+Input File: 
+in/t4.txt
+Line 01: 
+Line 02: 
+Line 03: [int] [t1] [,] [t2] [,] [t3] [;] [varlist] [varlist] [varlist] [declaration] 
+Line 04: [int] [ite] [;] [varlist] [declaration] 
+Line 05: 
+Error at Line 06: syntax error, unexpected '=', expecting ASSIGN
+Line 06: [t1] [declarations] [declarations] [=] 

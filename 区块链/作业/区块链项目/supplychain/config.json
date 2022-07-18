@@ -1,0 +1,51 @@
+{
+    "encryptType": "ECDSA",
+    "accounts": {
+        "ca": {
+            "type": "pem",
+            "value": "./accounts/0x0b86a4d62ec9ddf38e7733d378a2d3444ecb3ebf.pem"
+        },
+        "car": {
+            "type": "pem",
+            "value": "./accounts/0x19b267f1c7a491ea721b155d51fd447c50bed160.pem"
+        },
+        "bank": {
+            "type": "pem",
+            "value": "./accounts/0x38de065475130a8629ee502ef732c9547f67f713.pem"
+        },
+        "tyre": {
+            "type": "pem",
+            "value": "./accounts/0x7bced38f4dc58648417b9784e65dcc8564cf899b.pem"
+        },
+        "hub": {
+            "type": "pem",
+            "value": "./accounts/0xa75ac687c81088b567ea399679efa29ce4991907.pem"
+        }
+    },
+    "timeout": 60000,
+    "groupID": 1,
+    "chainID": 1,
+    "nodes": [
+        {
+            "ip": "127.0.0.1",
+            "port": "20200"
+        },
+        {
+            "ip": "127.0.0.1",
+            "port": "20201"
+        },
+        {
+            "ip": "127.0.0.1",
+            "port": "20202"
+        },
+        {
+            "ip": "127.0.0.1",
+            "port": "20203"
+        }
+    ],
+    "authentication": {
+        "key": "./authentications/sdk.key",
+        "cert": "./authentications/sdk.crt",
+        "ca": "./authentications/ca.crt"
+    }
+}

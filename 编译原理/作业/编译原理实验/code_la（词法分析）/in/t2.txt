@@ -1,0 +1,11 @@
+/* -- test2 -- */
+int A = 1, B;
+bool C1 = true, C2 = false, C3 == true;
+string D;
+float E = -1.6;
+char F = 'k';
+D := "scanner";
+while A <= B and C1 and C2 or C3 do
+	A := A * 2;
+	E := -1 * E;
+end

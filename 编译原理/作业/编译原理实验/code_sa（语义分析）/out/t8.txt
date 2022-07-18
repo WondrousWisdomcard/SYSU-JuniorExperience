@@ -1,0 +1,67 @@
+Symbol Table 
+      TYPE       ID        VAL
+  0  float      aaa           
+  1  float      bbb           
+  2  float      ccc           
+  3    int       h3           
+  4    int       j3           
+  5    int       k3           
+
+Code:
+_t0 = 0.9999
+aaa = _t0
+Label 012:
+_t1 = 1.0001
+bbb = _t1
+Label 011:
+_t2 = 0
+ccc = _t2
+Label 010:
+_t3 = 365
+h3 = _t3
+Label 009:
+_t4 = 0
+j3 = _t4
+Label 008:
+_t5 = 0
+k3 = _t5
+Label 007:
+Label 001:
+_t6 = 10
+_t7 = h3 < _t6
+_t8 = _t7
+If-not _t8 Goto Label 006    
+_t9 = aaa * aaa
+aaa = _t9
+Label 000:
+_t10 = bbb * bbb
+bbb = _t10
+Goto Label 001
+Label 006:
+_t11 = aaa - bbb
+ccc = _t11
+Label 005:
+_t12 = 0
+_t13 = ccc > _t12
+_t14 = _t13
+If-not _t14 Goto Label 004    
+_t15 = 0
+aaa = _t15
+Goto Label 004    
+_t16 = 0
+bbb = _t16
+Label 004:
+_t18 = j3 * bbb
+_t17 = h3 * aaa
+_t19 = _t17 + _t18
+_t20 = _t19
+_t21 = ccc / _t20
+ccc = _t21
+Label 003:
+_t22 = 0.0001
+_t23 = ccc > _t22
+_t24 = _t23
+If-not _t24 Goto Label -01    
+_t25 = 1
+k3 = _t25
+

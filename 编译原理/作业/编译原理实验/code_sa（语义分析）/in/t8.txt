@@ -1,0 +1,29 @@
+float aaa, bbb, ccc;
+int h3, j3, k3;
+
+aaa := 0.9999;
+bbb := 1.0001;
+ccc := 0;
+
+h3 := 365;
+j3 := 0;
+k3 := 0;
+
+while h3 < 10 do
+	aaa := aaa * aaa;
+	bbb := bbb * bbb;
+end;
+
+ccc := aaa - bbb;
+
+if ccc > 0 then
+	aaa := 0;
+else
+	bbb := 0;
+end;
+	
+ccc := ccc / (h3 * aaa + j3 * bbb);
+
+if ccc > 0.0001 then
+	k3 := 1;
+end;

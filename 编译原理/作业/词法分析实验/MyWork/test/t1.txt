@@ -1,0 +1,11 @@
+char str;
+int x, fact;
+str:= 'sample program in TINY+ language';
+read x;
+if x > 0 and x < 100 then { don't do it }
+	fact:=1;
+	while x > 0 do 
+		fact:=fact*x;
+		x:=x-1
+	write fact
+end

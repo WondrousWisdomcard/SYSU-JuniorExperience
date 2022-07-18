@@ -1,0 +1,11 @@
+/* 强制类型转换 */
+
+int a,b,c;
+float d,e,f;
+char g,h,i;
+string j,k,l;
+bool x,y,z;
+
+d := d + a;
+e := 1 * f;
+f := a - b;

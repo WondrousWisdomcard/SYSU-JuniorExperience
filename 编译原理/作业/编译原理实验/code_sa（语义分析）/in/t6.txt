@@ -1,0 +1,24 @@
+int temp1, temp2, temp3;
+bool b1, b2, b3;
+
+temp1 := 1;
+temp2 := 3;
+temp3 := 5;
+
+while temp1 < 100000 do
+	if temp1 < 50000 then
+		temp1 := temp1 + temp2 - 1;
+	else
+		temp1 := temp1 * temp2 - temp3;
+		temp3 := temp3 + 3;
+	end;
+	
+	repeat
+		temp2 := 1 + temp2;
+	until temp2 >= temp3;
+	
+	if not b1 = b2 then
+		write "Hello";
+	end;
+	
+end; 

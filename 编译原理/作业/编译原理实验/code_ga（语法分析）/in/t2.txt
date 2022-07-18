@@ -1,0 +1,19 @@
+/* 求解 Fibonacci 数列 */
+
+int t1, t2, t3;
+int ite; /* 迭代次数 */
+
+t1 := 0;
+t2 := 1;
+
+read ite;
+
+while ite > 0 do
+	ite := ite - 1;
+	t3 := t1 + t2;
+	t1 := t2;
+	t2 := t3;
+end;
+
+write "Result of Fibonacci is: ";
+write t3;

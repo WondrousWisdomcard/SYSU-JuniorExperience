@@ -1,0 +1,56 @@
+# 第九章 目标代码生成
+
+![image-20211231151732708](Bilibili09.assets/image-20211231151732708.png)
+
+![image-20211231152049433](Bilibili09.assets/image-20211231152049433.png)
+
+#### 指令选择
+
+![image-20211231152714352](Bilibili09.assets/image-20211231152714352.png)
+
+![image-20211231152657347](Bilibili09.assets/image-20211231152657347.png)
+
+![image-20211231152733063](Bilibili09.assets/image-20211231152733063.png)
+
+![image-20211231152839216](Bilibili09.assets/image-20211231152839216.png)
+
+![image-20211231152908609](Bilibili09.assets/image-20211231152908609.png)
+
+![image-20211231152930673](Bilibili09.assets/image-20211231152930673.png)
+
+![image-20211231153208098](Bilibili09.assets/image-20211231153208098.png)
+
+![image-20211231153332935](Bilibili09.assets/image-20211231153332935.png)
+
+（活动记录的开始处放返回地址）
+
+#### 寄存器的选择
+
+![image-20211231154120069](Bilibili09.assets/image-20211231154120069.png)
+
+![image-20211231154410590](Bilibili09.assets/image-20211231154410590.png)
+
+![image-20211231154438007](Bilibili09.assets/image-20211231154438007.png)
+
+#### 设计寄存器选择函数
+
+![image-20211231155544160](Bilibili09.assets/image-20211231155544160.png)
+
+![image-20211231155845835](Bilibili09.assets/image-20211231155845835.png)
+
+![image-20211231155955493](Bilibili09.assets/image-20211231155955493.png)
+
+#### 窥孔优化 Peehole
+
+![image-20211231160047086](Bilibili09.assets/image-20211231160047086.png)
+
+![image-20211231160135404](Bilibili09.assets/image-20211231160135404.png)
+
+![image-20211231160300960](Bilibili09.assets/image-20211231160300960.png)
+
+![image-20211231160356744](Bilibili09.assets/image-20211231160356744.png)
+
+![image-20211231160449973](Bilibili09.assets/image-20211231160449973.png)
+
+![image-20211231160504993](Bilibili09.assets/image-20211231160504993.png)
+

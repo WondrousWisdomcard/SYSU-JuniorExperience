@@ -1,0 +1,26 @@
+#app{
+    overflow-x: hidden;
+}
+
+.title_back{
+    background-color: #142c01;
+}
+
+.select_back{
+    background-color: #1e4101;
+}
+
+h1{
+    color: white;
+    margin-left: 50%;
+}
+
+#user_select{
+    margin-top: 15px;
+    padding-left: 40px;
+}
+
+.table_c{
+    overflow-y: scroll; 
+    height: 200px;
+}

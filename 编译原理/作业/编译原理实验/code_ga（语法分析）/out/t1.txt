@@ -1,0 +1,300 @@
+max@ubuntu:~/Desktop/manhattan-transfer/编译原理实验/code_ga$ ./ga.out
+Input File: 
+in/t1.txt
+Line 01: 
+Line 02: [int] [a] [,] [b] [,] [c] [;] [varlist] [varlist] [varlist] [declaration] 
+Line 03: [float] [e] [,] [f] [;] [varlist] [varlist] [declaration] 
+Line 04: 
+Line 05: 
+Line 06: [a] [declarations] [declarations] [:=] [7] [arithexp] [;] [xstmt] 
+Line 07: [b] [:=] [-10] [arithexp] [;] [xstmt] 
+Line 08: [c] [:=] [5] [arithexp] [;] [xstmt] 
+Line 09: [e] [:=] [0.15] [arithexp] [;] [xstmt] 
+Line 10: 
+Line 11: 
+Line 12: 
+Line 13: [read] [f] [xstmt] [;] 
+Line 14: [write] ["hey"] [strexp] [writexstmt] [;] 
+Line 15: 
+Line 16: 
+Line 17: 
+Line 18: [if] [not] [(] [a] [arithexp] [>] [0] [arithexp] [and] [comparison] [boolexp] [not] [b] [arithexp] [>] [0] [arithexp] [)] [comparison] [boolexp] [boolexp] [boolexp] [boolexp] [boolexp] [then] 
+Line 19: [write] ['N'] [strexp] [writexstmt] [;] 
+Line 20: [end] [xstmt] [xstmt] [;] 
+Line 21: 
+Line 22: 
+Line 23: [if] [true] [boolexp] [or] [false] [boolexp] [or] [boolexp] [c] [arithexp] [>=] [0] [arithexp] [then] [comparison] [boolexp] [boolexp] 
+Line 24: [b] [:=] [f] [arithexp] [*] [d] [arithexp] [arithexp] [;] [xstmt] 
+Line 25: [end] [xstmt] [xstmt] [;] 
+Line 26: 
+Line 27: 
+Line 28: 
+Line 29: 
+Line 30: [if] [a] [arithexp] [>=] [b] [arithexp] [and] [comparison] [boolexp] [a] [arithexp] [<] [c] [arithexp] [then] [comparison] [boolexp] [boolexp] 
+Line 31: 
+Line 32: [if] [a] [arithexp] [>=] [5] [arithexp] [and] [comparison] [boolexp] [a] [arithexp] [=] [c] [arithexp] [then] [comparison] [boolexp] [boolexp] 
+Line 33: 
+Line 34: [while] [a] [arithexp] [<] [1000] [arithexp] [do] [comparison] [boolexp] 
+Line 35: [a] [:=] [a] [arithexp] [+] [1] [arithexp] [;] [arithexp] [xstmt] 
+Line 36: [end] [xstmt] [xstmt] [;] 
+Line 37: [else] [xstmt] 
+Line 38: 
+Line 39: [repeat] 
+Line 40: [a] [:=] [a] [arithexp] [+] [b] [arithexp] [*] [2] [arithexp] [arithexp] [;] [arithexp] [xstmt] 
+Line 41: [until] [xstmt] [a] [arithexp] [<] [2000] [arithexp] [;] [comparison] [boolexp] [xstmt] 
+Line 42: [end] [xstmt] [xstmt] [;] 
+Line 43: [end] [xstmt] [xstmt] [;] 
+Line 44: 
+Line 45: 
+Line 46: [a] [:=] [a] [arithexp] [+] [b] [arithexp] [*] [(] [c] [arithexp] [-] [d] [arithexp] [)] [arithexp] [arithexp] [arithexp] [;] [arithexp] [xstmt] 
+Line 47: 
+Line 48: 
+Line 49: [xstmt] [xstmt] [xstmt] [xstmt] [xstmt] [xstmt] [xstmt] [xstmt] [xstmt] [xstmt] [program] 
+Syntax Tree:
+(0,1) program 
+   (1,1) declarations 
+      (2,1) declaration 
+         (3,1) int 
+         (3,2) varlist 
+            (4,1) a 
+            (4,2) , 
+            (4,3) varlist 
+               (5,1) b 
+               (5,2) , 
+               (5,3) varlist 
+                  (6,1) c 
+      (2,2) ; 
+      (2,3) declarations 
+         (3,1) declaration 
+            (4,1) float 
+            (4,2) varlist 
+               (5,1) e 
+               (5,2) , 
+               (5,3) varlist 
+                  (6,1) f 
+         (3,2) ; 
+   (1,2) xstmt 
+      (2,1) xstmt 
+         (3,1) a 
+         (3,2) := 
+         (3,3) arithexp 
+            (4,1) 7 
+      (2,2) ; 
+      (2,3) xstmt 
+         (3,1) xstmt 
+            (4,1) b 
+            (4,2) := 
+            (4,3) arithexp 
+               (5,1) -10 
+         (3,2) ; 
+         (3,3) xstmt 
+            (4,1) xstmt 
+               (5,1) c 
+               (5,2) := 
+               (5,3) arithexp 
+                  (6,1) 5 
+            (4,2) ; 
+            (4,3) xstmt 
+               (5,1) xstmt 
+                  (6,1) e 
+                  (6,2) := 
+                  (6,3) arithexp 
+                     (7,1) 0.15 
+               (5,2) ; 
+               (5,3) xstmt 
+                  (6,1) xstmt 
+                     (7,1) read 
+                     (7,2) f 
+                  (6,2) ; 
+                  (6,3) xstmt 
+                     (7,1) writexstmt 
+                        (8,1) write 
+                        (8,2) strexp 
+                           (9,1) "hey" 
+                     (7,2) ; 
+                     (7,3) xstmt 
+                        (8,1) xstmt 
+                           (9,1) if 
+                           (9,2) boolexp 
+                              (10,1) not 
+                              (10,2) boolexp 
+                                 (11,1) ( 
+                                 (11,2) boolexp 
+                                    (12,1) boolexp 
+                                       (13,1) comparison 
+                                          (14,1) arithexp 
+                                             (15,1) a 
+                                          (14,2) > 
+                                          (14,3) arithexp 
+                                             (15,1) 0 
+                                    (12,2) and 
+                                    (12,3) boolexp 
+                                       (13,1) not 
+                                       (13,2) boolexp 
+                                          (14,1) comparison 
+                                             (15,1) arithexp 
+                                                (16,1) b 
+                                             (15,2) > 
+                                             (15,3) arithexp 
+                                                (16,1) 0 
+                                 (11,3) ) 
+                           (9,3) then 
+                           (9,4) xstmt 
+                              (10,1) writexstmt 
+                                 (11,1) write 
+                                 (11,2) strexp 
+                                    (12,1) 'N' 
+                              (10,2) ; 
+                           (9,5) end 
+                        (8,2) ; 
+                        (8,3) xstmt 
+                           (9,1) xstmt 
+                              (10,1) if 
+                              (10,2) boolexp 
+                                 (11,1) boolexp 
+                                    (12,1) boolexp 
+                                       (13,1) true 
+                                    (12,2) or 
+                                    (12,3) boolexp 
+                                       (13,1) false 
+                                 (11,2) or 
+                                 (11,3) boolexp 
+                                    (12,1) comparison 
+                                       (13,1) arithexp 
+                                          (14,1) c 
+                                       (13,2) >= 
+                                       (13,3) arithexp 
+                                          (14,1) 0 
+                              (10,3) then 
+                              (10,4) xstmt 
+                                 (11,1) xstmt 
+                                    (12,1) b 
+                                    (12,2) := 
+                                    (12,3) arithexp 
+                                       (13,1) arithexp 
+                                          (14,1) f 
+                                       (13,2) * 
+                                       (13,3) arithexp 
+                                          (14,1) d 
+                                 (11,2) ; 
+                              (10,5) end 
+                           (9,2) ; 
+                           (9,3) xstmt 
+                              (10,1) xstmt 
+                                 (11,1) if 
+                                 (11,2) boolexp 
+                                    (12,1) boolexp 
+                                       (13,1) comparison 
+                                          (14,1) arithexp 
+                                             (15,1) a 
+                                          (14,2) >= 
+                                          (14,3) arithexp 
+                                             (15,1) b 
+                                    (12,2) and 
+                                    (12,3) boolexp 
+                                       (13,1) comparison 
+                                          (14,1) arithexp 
+                                             (15,1) a 
+                                          (14,2) < 
+                                          (14,3) arithexp 
+                                             (15,1) c 
+                                 (11,3) then 
+                                 (11,4) xstmt 
+                                    (12,1) xstmt 
+                                       (13,1) if 
+                                       (13,2) boolexp 
+                                          (14,1) boolexp 
+                                             (15,1) comparison 
+                                                (16,1) arithexp 
+                                                   (17,1) a 
+                                                (16,2) >= 
+                                                (16,3) arithexp 
+                                                   (17,1) 5 
+                                          (14,2) and 
+                                          (14,3) boolexp 
+                                             (15,1) comparison 
+                                                (16,1) arithexp 
+                                                   (17,1) a 
+                                                (16,2) = 
+                                                (16,3) arithexp 
+                                                   (17,1) c 
+                                       (13,3) then 
+                                       (13,4) xstmt 
+                                          (14,1) xstmt 
+                                             (15,1) while 
+                                             (15,2) boolexp 
+                                                (16,1) comparison 
+                                                   (17,1) arithexp 
+                                                      (18,1) a 
+                                                   (17,2) < 
+                                                   (17,3) arithexp 
+                                                      (18,1) 1000 
+                                             (15,3) do 
+                                             (15,4) xstmt 
+                                                (16,1) xstmt 
+                                                   (17,1) a 
+                                                   (17,2) := 
+                                                   (17,3) arithexp 
+                                                      (18,1) arithexp 
+                                                         (19,1) a 
+                                                      (18,2) + 
+                                                      (18,3) arithexp 
+                                                         (19,1) 1 
+                                                (16,2) ; 
+                                             (15,5) end 
+                                          (14,2) ; 
+                                       (13,5) else 
+                                       (13,6) xstmt 
+                                          (14,1) xstmt 
+                                             (15,1) repeat 
+                                             (15,2) xstmt 
+                                                (16,1) xstmt 
+                                                   (17,1) a 
+                                                   (17,2) := 
+                                                   (17,3) arithexp 
+                                                      (18,1) arithexp 
+                                                         (19,1) a 
+                                                      (18,2) + 
+                                                      (18,3) arithexp 
+                                                         (19,1) arithexp 
+                                                            (20,1) b 
+                                                         (19,2) * 
+                                                         (19,3) arithexp 
+                                                            (20,1) 2 
+                                                (16,2) ; 
+                                             (15,3) until 
+                                             (15,4) boolexp 
+                                                (16,1) comparison 
+                                                   (17,1) arithexp 
+                                                      (18,1) a 
+                                                   (17,2) < 
+                                                   (17,3) arithexp 
+                                                      (18,1) 2000 
+                                          (14,2) ; 
+                                       (13,7) end 
+                                    (12,2) ; 
+                                 (11,5) end 
+                              (10,2) ; 
+                              (10,3) xstmt 
+                                 (11,1) xstmt 
+                                    (12,1) a 
+                                    (12,2) := 
+                                    (12,3) arithexp 
+                                       (13,1) arithexp 
+                                          (14,1) a 
+                                       (13,2) + 
+                                       (13,3) arithexp 
+                                          (14,1) arithexp 
+                                             (15,1) b 
+                                          (14,2) * 
+                                          (14,3) arithexp 
+                                             (15,1) ( 
+                                             (15,2) arithexp 
+                                                (16,1) arithexp 
+                                                   (17,1) c 
+                                                (16,2) - 
+                                                (16,3) arithexp 
+                                                   (17,1) d 
+                                             (15,3) ) 
+                                 (11,2) ; 
+

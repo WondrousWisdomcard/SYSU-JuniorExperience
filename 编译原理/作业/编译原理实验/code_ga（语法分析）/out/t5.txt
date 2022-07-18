@@ -1,0 +1,14 @@
+Input File: 
+in/t5.txt
+Line 01: 
+Line 02: 
+Line 03: [int] [t1] [,] [t2] [,] [t3] [;] [varlist] [varlist] [varlist] [declaration] 
+Line 04: [int] [ite] [;] [varlist] [declaration] 
+Line 05: 
+Line 06: [t1] [declarations] [declarations] [:=] [0] [arithexp] [;] [xstmt] 
+Line 07: [t2] [:=] [1] [arithexp] [;] [xstmt] 
+Line 08: 
+Line 09: [read] [ite] [xstmt] [;] 
+Line 10: 
+Error at Line 11: syntax error, unexpected THEN, expecting DO or OR or AND
+Line 11: [while] [ite] [arithexp] [>] [0] [arithexp] [then] [comparison] [boolexp]

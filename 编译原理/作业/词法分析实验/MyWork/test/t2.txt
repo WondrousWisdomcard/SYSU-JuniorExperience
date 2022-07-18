@@ -1,0 +1,8 @@
+true false or and not
+int	bool char while do
+if then else end repeat
+until read write , ;
+:= + - * /
+( )	< = >
+<= >= a2c 123 'EFG'
+{cc'oo'o} cco0 'cco{}coc'

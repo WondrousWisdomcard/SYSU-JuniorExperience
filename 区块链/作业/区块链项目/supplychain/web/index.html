@@ -1,0 +1,469 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>供应链金融平台</title>
+    <!-- 新 Bootstrap4 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- bootstrap.bundle.min.js 用于弹窗、提示、下拉菜单，包含了 popper.min.js -->
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+
+    <!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- Vue框架 -->
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <!-- 自定义属性 -->
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="client.js"></script> -->
+
+</head>
+
+<body>
+    <div id='app'>
+        <div class="row">
+            <div class="col-10 border-right title_back">
+                <h1>
+                    供应链金融平台
+                </h1>
+            </div>
+
+            <div class='col-2 title_back'>
+                <div class="row">
+                    <div align='center' class="col-3 border-right" id="user_select">
+                        <div class="btn btn-info btn-sm dropdown-toggle" type="button" id="userSelector"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            当前用户：{{ userName }}
+                        </div>
+                        <div class="dropdown-menu" aria-labelledby="userSelector">
+                            <button class="dropdown-item" @click="changeUser('car')">car</button>
+                            <button class="dropdown-item" @click="changeUser('bank')">bank</button>
+                            <button class="dropdown-item" @click="changeUser('tyre')">tyre</button>
+                            <button class="dropdown-item" @click="changeUser('hub')">hub</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="m-auto col-4 card">
+            <div class="card-body">
+                <h4 align='center'>个人资料</h4>
+                <h5>账户地址: {{ nameToAdd[userName] }}</h5>
+                <h5>账户余额: {{ cur_account.amount }}</h5>
+                <h5>支票总额: {{ cur_account.receipt }}</h5>
+                <h5>欠款总额: {{ cur_account.debt }}</h5>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- debt receipts -->
+            <div class="col-12">
+                <div class="row justify-content-around" style="margin-top: 15px;">
+
+
+
+                    <div class="mt-3 mb-1 col card">
+                        <div class="card-body">
+                            <div class="col-md-12">
+                                <h4 align='center'>支票记录（未结算）</h4>
+                            </div>
+                            <table align='center'
+                                class='account-info-table w-100 border-top border-bottom border-black'>
+                                <thead>
+                                    <th>欠款方</th>
+                                    <th>收款方</th>
+                                    <th>金额</th>
+                                </thead>
+                            </table>
+                            <div class="table_c">
+                                <table align='center' border="1" class='account-info-table w-100'
+                                    v-show='cur_account.receiptList.length'>
+                                    <tr v-for='item in cur_account.receiptList'>
+                                        <td>{{addToName[item.from]}}</td>
+                                        <td>{{addToName[item.to]}}</td>
+                                        <td>{{item.amount}}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-3 mb-1 col card">
+                        <div class="card-body">
+                            <div class="col-md-12">
+                                <h4 align='center'>欠款记录（未结算）</h4>
+                            </div>
+                            <table align='center'
+                                class='account-info-table w-100 border-top border-bottom border-black'>
+                                <thead>
+                                    <th width='80'>欠款方</th>
+                                    <th width='80'>收款方</th>
+                                    <th width='80'>金额</th>
+                                </thead>
+                            </table>
+                            <div class="table_c">
+                                <table align='center' border="1" class='account-info-table w-100'
+                                    v-show='cur_account.debtList.length'>
+                                    <tr v-for='item in cur_account.debtList'>
+                                        <td width='80'>{{addToName[item.from]}}</td>
+                                        <td width='80'>{{addToName[item.to]}}</td>
+                                        <td width='80'>{{item.amount}}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-3 mb-1 col card">
+                        <div class="card-body">
+                            <div class="col-md-12">
+                                <h4 align='center'>支票记录（所有）</h4>
+                            </div>
+                            <table align='center'
+                                class='account-info-table w-100 border-top border-bottom border-black'>
+                                <thead>
+                                    <th>欠款方</th>
+                                    <th>收款方</th>
+                                    <th>金额</th>
+                                </thead>
+                            </table>
+                            <div class="table_c">
+                                <table align='center' border="1" class='account-info-table w-100'
+                                    v-show='cur_account.allreceiptList.length'>
+                                    <tr v-for='item in cur_account.allreceiptList'>
+                                        <td>{{addToName[item.from]}}</td>
+                                        <td>{{addToName[item.to]}}</td>
+                                        <td>{{item.amount}}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-3 mb-1 col card">
+                        <div class="card-body">
+                            <div class="col-md-12">
+                                <h4 align='center'>欠款记录（所有）</h4>
+                            </div>
+                            <table align='center'
+                                class='account-info-table w-100 border-top border-bottom border-black'>
+                                <thead>
+                                    <th width='80'>欠款方</th>
+                                    <th width='80'>收款方</th>
+                                    <th width='80'>金额</th>
+                                </thead>
+                            </table>
+                            <div class="table_c">
+                                <table align='center' border="1" class='account-info-table w-100'
+                                    v-show='cur_account.alldebtList.length'>
+                                    <tr v-for='item in cur_account.alldebtList'>
+                                        <td width='80'>{{addToName[item.from]}}</td>
+                                        <td width='80'>{{addToName[item.to]}}</td>
+                                        <td width='80'>{{item.amount}}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 align='center'>开具支票</h5>
+                                <div class="btn btn-info btn-sm dropdown-toggle" type="button" id="buyFromChanger"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    收款公司：{{ buyFrom }}
+                                </div>
+                                <div class="dropdown-menu" aria-labelledby="butFromChanger">
+                                    <button class="dropdown-item" @click="changeBuyFrom('car')">car</button>
+                                    <button class="dropdown-item" @click="changeBuyFrom('bank')">bank</button>
+                                    <button class="dropdown-item" @click="changeBuyFrom('tyre')">tyre</button>
+                                    <button class="dropdown-item" @click="changeBuyFrom('hub')">hub</button>
+                                </div>
+                                <form>
+                                    <div class="input-group mt-3" width="100">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">金额</span>
+                                        </div>
+                                        <input type="text" class="form-control" v-model="buyAmount">
+                                    </div>
+                                    <center><button type="button" class="btn btn-success mt-3"
+                                            @click="buy()">确定</button></center>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 align='center'>转让支票</h5>
+                                <div class="btn btn-info btn-sm dropdown-toggle" type="button" id="transferToChanger"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    目标企业：{{ transferTo }}
+                                </div>
+                                <div class="dropdown-menu" aria-labelledby="TransferToChanger">
+                                    <button class="dropdown-item" @click="changeTransferTo('car')">car</button>
+                                    <button class="dropdown-item" @click="changeTransferTo('bank')">bank</button>
+                                    <button class="dropdown-item" @click="changeTransferTo('tyre')">tyre</button>
+                                    <button class="dropdown-item" @click="changeTransferTo('hub')">hub</button>
+                                </div>
+                                <form>
+                                    <div class="input-group mt-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">金额</span>
+                                        </div>
+                                        <input type="text" class="form-control" v-model="toAmount">
+                                    </div>
+                                    <center><button type="button" class="btn btn-success mt-3"
+                                            @click="transfer()">确定</button></center>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 align='center'>融资借贷</h5>
+                                <div class="btn btn-info btn-sm dropdown-toggle" type="button" id="useToChanger"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    目标机构：{{ useTo }}
+                                </div>
+                                <div class="dropdown-menu" aria-labelledby="useToChanger">
+                                    <button class="dropdown-item" @click="changeUseTo('car')">car</button>
+                                    <button class="dropdown-item" @click="changeUseTo('bank')">bank</button>
+                                    <button class="dropdown-item" @click="changeUseTo('tyre')">tyre</button>
+                                    <button class="dropdown-item" @click="changeUseTo('hub')">hub</button>
+                                </div>
+                                <form>
+                                    <div class="input-group mt-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">金额</span>
+                                        </div>
+                                        <input type="text" class="form-control" v-model="useAmount">
+                                    </div>
+                                    <center><button align='center' type="button" class="btn btn-success mt-3"
+                                            @click="useReceipt()">确定</button></center>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 align='center'>归还欠款</h5>
+                                <div class="mt-3">注：此操作会归还所有欠款，并将交易记录上链。</div>
+                                <center><button align='center' type="button" class="btn btn-success mt-5"
+                                        @click="clearDebt()">一键归还</button></center>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script>
+        async function contractMethod(account, method, parameters) {
+            let res = await axios.post('/contractMethod', {
+                account: account,
+                method: method,
+                parameters: parameters,
+            });
+            if (res.data && res.data.ok) {
+                return res.data.data;
+            } else {
+                console.log(JSON.stringify(res.data ? res.data.msg : res));
+            }
+        }
+
+        var appVue = new Vue({
+            el: '#app',
+            data: {
+                accounts: [],
+                userName: 'car',
+                cur_account: {},
+                buyFrom: '',
+                buyAmount: 0,
+                transferTo: '',
+                toAmount: 0,
+                useTo: '',
+                useAmount: 0,
+                nameToAdd: {
+                    'car': '0x19b267f1c7a491ea721b155d51fd447c50bed160',
+                    'bank': '0x38de065475130a8629ee502ef732c9547f67f713',
+                    'tyre': '0x7bced38f4dc58648417b9784e65dcc8564cf899b',
+                    'hub': '0xa75ac687c81088b567ea399679efa29ce4991907'
+                },
+                addToName: {
+                    '0x19b267f1c7a491ea721b155d51fd447c50bed160': 'car',
+                    '0x38de065475130a8629ee502ef732c9547f67f713': 'bank',
+                    '0x7bced38f4dc58648417b9784e65dcc8564cf899b': 'tyre',
+                    '0xa75ac687c81088b567ea399679efa29ce4991907': 'hub'
+                },
+            },
+
+            async mounted() {
+                for (let name of ['car', 'bank', 'tyre', 'hub']) {
+                    let account = { name: name };
+
+                    let company = await contractMethod(name, 'getCompanyInfo', [this.nameToAdd[name]]);
+                    account.amount = company[0].balance;
+
+                    let debt = await contractMethod(name, 'getPendingDebtsAmount', []);
+                    account.debt = debt;
+                    let deblist = await contractMethod(name, 'getCompanyDebts', [this.nameToAdd[name], false]);
+                    account.debtList = deblist[0];
+                    let alldeblist = await contractMethod(name, 'getCompanyDebts', [this.nameToAdd[name], true]);
+                    account.alldebtList = alldeblist[0];
+
+                    let receipt = await contractMethod(name, 'getPendingReceiptsAmount', []);
+                    account.receipt = receipt;
+                    let reclist = await contractMethod(name, 'getCompanyReceipts', [this.nameToAdd[name], false]);
+                    account.receiptList = reclist[0];
+                    let allreclist = await contractMethod(name, 'getCompanyReceipts', [this.nameToAdd[name], true]);
+                    account.allreceiptList = allreclist[0];
+
+
+                    this.accounts.push(account);
+                }
+                this.cur_account = this.accounts[0];//默认是第一个汽车公司
+            },
+
+            methods: {
+                async refresh() {// 更新数据
+                    this.accounts = [];
+                    for (let name of ['car', 'bank', 'tyre', 'hub']) {
+                        let account = { name: name };
+
+                        let company = await contractMethod(name, 'getCompanyInfo', [nameToAdd[name]]);
+                        account.amount = company[0].balance;
+
+                        let debt = await contractMethod(name, 'getPendingDebtsAmount', []);
+                        account.debt = debt;
+                        let deblist = await contractMethod(name, 'getCompanyDebts', [this.nameToAdd[name], false]);
+                        account.debtList = deblist[0];
+                        let alldeblist = await contractMethod(name, 'getCompanyDebts', [this.nameToAdd[name], true]);
+                        account.alldebtList = alldeblist[0];
+
+                        let receipt = await contractMethod(name, 'getPendingReceiptsAmount', []);
+                        account.receipt = receipt;
+                        let reclist = await contractMethod(name, 'getCompanyReceipts', [this.nameToAdd[name], false]);
+                        account.receiptList = reclist[0];
+                        let allreclist = await contractMethod(name, 'getCompanyReceipts', [this.nameToAdd[name], true]);
+                        account.allreceiptList = allreclist[0];
+
+                        this.accounts.push(account);
+                    }
+                },
+                changeUser(newUser) {
+                    this.userName = newUser;
+                    for (let idx = 0; idx < this.accounts.length; idx++) {
+                        if (this.accounts[idx].name == this.userName) {
+                            this.cur_account = this.accounts[idx];
+                            break;
+                        }
+                    }
+                    this.buyFrom = '';
+                    this.buyAmount = 0;
+                    this.transferTo = '';
+                    this.toAmount = 0;
+                    this.useTo = '';
+                    this.useAmount = 0;
+                },
+                changeBuyFrom(u) {
+                    this.buyFrom = u;
+                },
+                changeTransferTo(u) {
+                    this.transferTo = u;
+                },
+                changeUseTo(u) {
+                    this.useTo = u;
+                },
+                async buy() {//生成账单
+                    if (this.buyFrom == "") {
+                        alert("收款企业不存在！");
+                    }
+                    else {
+                        let result = await contractMethod(this.userName, 'createReceipt', [this.nameToAdd[this.buyFrom], this.buyAmount]);
+                        if (result == 'true') {
+                            alert("账单生成成功！");
+                            await this.refresh();
+                            this.changeUser(this.userName);
+                        }
+                        else {
+                            alert("账单生成失败！");
+                        }
+                    }
+                    this.buyFrom = '';
+                    this.buyAmount = 0;
+                    refresh();
+                },
+                async transfer() {//拆分转移账单
+                    if (this.transferTo == "") {
+                        alert("转让目标不存在！");
+                    }
+                    else {
+                        let result = await contractMethod(this.userName, 'transferReceipt', [this.nameToAdd[this.transferTo], this.toAmount]);
+                        if (result == 'true') {
+                            alert("账单转让成功！")
+                            await this.refresh();
+                            this.changeUser(this.userName);
+                        } else {
+                            alert("金额不足，转让失败！")
+                        }
+                        this.transferTo = '';
+                        this.buyAmount = 0;
+                    }
+                    refresh();
+                },
+                async useReceipt() {//融资
+                    if (this.useTo == "") {
+                        alert("目标机构不存在！");
+                    }
+                    else {
+                        let result = await contractMethod(this.userName, 'applyFinancing', [this.nameToAdd[this.useTo], this.useAmount]);
+                        if (result == 'true') {
+                            alert("融资成功！")
+                            await this.refresh();
+                            this.changeUser(this.userName);
+                        }
+                        else {
+                            alert("融资失败！请检查融资对象和融资支票额度！")
+                        }
+                        this.useTo = '';
+                        this.useAmount = 0;
+                    }
+                    refresh();
+                },
+                async clearDebt() {//清算
+                    let result = await contractMethod(this.userName, 'settleReceipt', []);
+                    if (result == 'true') {
+                        alert("清算成功！")
+                        await this.refresh();
+                        this.changeUser(this.userName);
+                    }
+                    else {
+                        alert("清算失败！当前企业余额不足！")
+                    }
+                    refresh();
+                },
+            }
+        })
+    </script>
+</body>
+
+</html>

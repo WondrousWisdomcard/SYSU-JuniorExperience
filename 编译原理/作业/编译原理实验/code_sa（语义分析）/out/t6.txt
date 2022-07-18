@@ -1,0 +1,58 @@
+Symbol Table 
+      TYPE       ID        VAL
+  0    int    temp1           
+  1    int    temp2           
+  2    int    temp3           
+  3   bool       b1           
+  4   bool       b2           
+  5   bool       b3           
+
+Code:
+_t0 = 1
+temp1 = _t0
+Label 008:
+_t1 = 3
+temp2 = _t1
+Label 007:
+_t2 = 5
+temp3 = _t2
+Label 006:
+Label 005:
+_t3 = 100000
+_t4 = temp1 < _t3
+_t5 = _t4
+If-not _t5 Goto Label -01    
+_t6 = 50000
+_t7 = temp1 < _t6
+_t8 = _t7
+If-not _t8 Goto Label 004    
+_t10 = 1
+_t9 = temp1 + temp2
+_t11 = _t9 - _t10
+temp1 = _t11
+Goto Label 004    
+_t12 = temp1 * temp2
+_t13 = _t12 - temp3
+temp1 = _t13
+Label 000:
+_t14 = 3
+_t15 = temp3 + _t14
+temp3 = _t15
+Label 004:
+Label 002:
+_t16 = 1
+_t17 = _t16 + temp2
+temp2 = _t17
+_t18 = temp2 >= temp3
+_t19 = _t18
+If _t19 Goto Label 003    
+Goto Label 002
+Label 003:
+_t20 = b1 == b2
+_t21 = _t20
+_t22 = not _t21
+If-not _t22 Goto Label -01    
+_t23 = 'Hello'
+Write _t23
+Goto Label 005
+
