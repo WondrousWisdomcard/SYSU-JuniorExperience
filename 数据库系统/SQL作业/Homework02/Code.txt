@@ -1,0 +1,148 @@
+# 1.1
+
+SELECT COUNT(*), AVG(I_PRICE), MAX(I_PRICE), MIN(I_PRICE), VARIANCE(I_PRICE)
+FROM bmsql_item;
+
+
+
+# 1.2
+
+SELECT S_W_ID AS w_id, AVG(S_QUANTITY) AS avg
+FROM bmsql_stock
+GROUP BY S_W_ID;
+
+
+
+# 2.1
+
+SELECT * 
+FROM bmsql_item
+WHERE I_NAME ~ '^NB|VT$';
+
+
+
+# 2.2
+
+SELECT COUNT(*), AVG(I_PRICE)
+FROM bmsql_item
+WHERE I_NAME ~ '^[h-m]';
+
+
+
+# 3.1
+
+SELECT * 
+FROM bmsql_item
+WHERE I_NAME ~ '^NB|VT$' AND 10 < ALL (
+	SELECT S_QUANTITY 
+	FROM bmsql_stock 
+	WHERE S_I_ID = I_ID
+);
+
+
+
+# 3.2 Version 1
+
+SELECT *
+FROM bmsql_item
+WHERE 95 < ANY (
+	SELECT S_QUANTITY 
+	FROM bmsql_stock 
+	WHERE S_I_ID = I_ID AND S_W_ID IN (
+		SELECT W_ID
+		FROM bmsql_warehouse
+		WHERE W_TAX > 0.16
+	)
+);
+
+
+
+# 3.2 Version 2
+
+SELECT *
+FROM bmsql_item
+WHERE I_ID IN (
+	SELECT S_I_ID
+	FROM bmsql_stock
+	WHERE S_QUANTITY > 95 AND S_W_ID IN (
+		SELECT W_ID
+		FROM bmsql_warehouse
+		WHERE W_TAX > 0.16
+	)
+);
+
+
+
+# 4.1 
+
+SELECT *
+FROM bmsql_item
+WHERE 95 < ANY (
+	SELECT S_QUANTITY 
+	FROM bmsql_stock 
+	WHERE S_I_ID = I_ID AND S_W_ID IN (
+		SELECT W_ID
+		FROM bmsql_warehouse
+		WHERE W_TAX > 0.18
+	)
+);
+
+
+
+# 4.2 
+
+SELECT *
+FROM bmsql_warehouse
+WHERE W_ID IN (
+	SELECT S_W_ID
+	FROM bmsql_stock
+	WHERE S_QUANTITY > 95 AND S_I_ID IN (
+		SELECT I_ID
+		FROM bmsql_item
+		WHERE I_NAME ~ '^SP'
+	)
+);
+
+
+
+# 5.1
+
+SELECT * 
+FROM bmsql_item
+WHERE I_NAME ~ '^SP' AND 50 < (
+	SELECT AVG(S_QUANTITY)
+	FROM bmsql_stock
+	WHERE I_ID = S_I_ID
+);
+
+
+
+# 5.2
+
+SELECT W_ID
+FROM bmsql_warehouse
+WHERE 0.15 > ALL (
+	SELECT D_TAX
+	FROM bmsql_district
+	WHERE D_W_ID = W_ID
+);
+
+
+
+# 5.3
+
+SELECT S_W_ID AS w_id, COUNT(I_ID) AS number, AVG(I_PRICE) AS avg_price
+FROM bmsql_stock, bmsql_item
+WHERE I_ID = S_I_ID AND S_W_ID IN (
+	SELECT W_ID
+	FROM bmsql_warehouse
+	WHERE 0.15 > ALL (
+		SELECT D_TAX
+		FROM bmsql_district
+		WHERE D_W_ID = W_ID
+	)
+) AND S_QUANTITY > 95
+GROUP BY S_W_ID;
+
+
+

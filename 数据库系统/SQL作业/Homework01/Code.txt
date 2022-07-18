@@ -1,0 +1,53 @@
+# 1
+SELECT DISTINCT D_NAME 
+FROM bmsql_district 
+WHERE D_TAX < 0.15;
+
+# 2
+SELECT x.W_STATE, x.W_CITY
+FROM bmsql_warehouse x, bmsql_district y
+WHERE y.D_STATE = 'HS' AND x.W_ID = y.D_W_ID;
+
+# 3
+SELECT s.S_I_ID, s.S_W_ID, s.S_QUANTITY
+FROM bmsql_stock s
+WHERE s.S_QUANTITY < 18 AND s.S_I_ID IN
+(
+    SELECT i.I_ID
+    FROM bmsql_item i
+    WHERE i.I_PRICE = 80
+);
+
+# 4
+SELECT DISTINCT w.W_ID, w.W_NAME 
+FROM bmsql_warehouse w
+WHERE w.W_ID IN
+(
+    SELECT h.H_W_ID
+    FROM bmsql_history h
+    WHERE h.H_C_ID IN
+    (
+        SELECT c.C_ID
+        FROM bmsql_Customer c
+        WHERE c.C_STATE = 'FJ' AND ROUND(c.C_DISCOUNT,2) = 0.2
+    )
+);
+
+# 5
+SELECT c.C_FIRST, c.C_MIDDLE, c.C_LAST
+FROM bmsql_customer c
+WHERE ROUND(c.C_DISCOUNT,2) = 0.3 AND c.C_CREDIT = 'GC' AND c.C_ID IN
+(
+    SELECT o.O_C_ID
+    FROM bmsql_oorder o
+    WHERE o.O_D_ID IN
+    (
+        SELECT d.D_ID
+        FROM bmsql_district d
+        WHERE D_STATE = 'UV'
+        UNION
+        SELECT d.D_ID
+        FROM bmsql_district d
+        WHERE D_STATE = 'HS'
+    )
+);
