@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<project name="GridWorld" default="make-zip" basedir=".">
+   <property file="build.properties"/>
+
+   <property name="framework.dir" value="framework"/>  
+   <property name="projects.dir" value="projects"/>  
+   <property name="build.dir" value="build"/>  
+   <property name="dist.dir" value="dist"/>  
+   <property name="zip.name" value="GridWorldCode"/>
+   <property name="dist.zip.dir" value="${dist.dir}/${zip.name}"/>  
+   <property name="package.name" value="info.gridworld"/>
+   <property name="framework.resources" 
+             value="${framework.dir}/info/gridworld/gui/WorldFrameResources.properties" />
+   
+   <target name="init">
+      <tstamp>
+         <format property="version.date" pattern="yyyy-MM-dd" locale="en"/>
+      </tstamp>
+      <mkdir dir="${build.dir}"/>
+      <mkdir dir="${dist.dir}"/>
+      <mkdir dir="${dist.zip.dir}"/>
+   </target>
+
+   <target name="props" depends="init" description="Set version-specific properties.">
+      <replaceregexp file="${framework.resources}" byline="true">
+         <regexp pattern="(version.id\s*=\s*).*"/>
+         <substitution expression="\1${version.id}"/>
+      </replaceregexp>
+      <replaceregexp file="${framework.resources}" byline="true">
+         <regexp pattern="(version.date\s*=\s*).*"/>
+         <substitution expression="\1${version.date}"/>
+      </replaceregexp>
+   </target>
+
+   <target name="compile" depends="props">
+      <javac srcdir="${framework.dir}" destdir="${build.dir}" debug="true" target="1.7">
+         <compilerarg value="-Xlint:unchecked"/>
+      </javac>
+   </target>
+
+   <target name="build-jar" depends="compile">
+      <copy todir="${build.dir}">
+         <fileset dir="${framework.dir}">
+            <include name="**/*.gif"/>
+            <include name="**/*.properties"/>
+            <include name="**/*.html"/>
+         </fileset>
+      </copy>
+
+      <jar destfile="${dist.zip.dir}/gridworld.jar" basedir="${build.dir}"/>
+   </target>
+
+   <target name="javadoc" depends="build-jar">
+      <javadoc
+            destdir="${dist.zip.dir}/javadoc"
+            packagenames="${package.name}.*"
+            sourcepath="${framework.dir}"
+            excludepackagenames="${package.name}.gui.*"
+            link="${java.api.url}"/>
+   </target>
+
+   <target name="make-zip" depends="javadoc">
+      <copy todir="${dist.zip.dir}/projects">
+         <fileset dir="${projects.dir}">
+            <include name="**/*.java"/>
+            <include name="**/*.gif"/>
+         </fileset>
+      </copy>
+      <copy todir="${dist.zip.dir}/framework">      
+         <fileset dir="${framework.dir}">
+            <include name="**/*.java"/>
+            <include name="**/*.gif"/>
+            <include name="**/*.properties"/>
+         </fileset>
+      </copy>
+      <copy todir="${dist.zip.dir}">
+         <fileset dir="${basedir}">
+            <include name="build.xml"/>
+            <include name="build.properties"/>
+         </fileset>
+      </copy>
+      <delete file="${dist.dir}/${zip.name}.zip" />
+      <zip destfile="${dist.dir}/${zip.name}.zip" basedir="${dist.dir}">
+      </zip>
+   </target>
+
+   <target name="clean">
+      <delete dir="${build.dir}"/>
+      <delete dir="${dist.dir}"/>
+   </target>
+</project>

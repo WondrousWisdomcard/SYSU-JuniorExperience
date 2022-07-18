@@ -1,0 +1,6 @@
+projectKey=RockHound
+serverUrl=http://localhost:9000
+serverVersion=9.1.0.47736
+dashboardUrl=http://localhost:9000/dashboard?id=RockHound
+ceTaskId=AXzVSCSGbr1HV6GFLi-x
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AXzVSCSGbr1HV6GFLi-x

@@ -1,0 +1,115 @@
+./IMDB Dataset Preprocessed.csv already exists.
+Device:  cuda
+./IMDB Word2Vec m10v150.csv already exists.
+./IMDB Word2Vec m10v300.csv already exists.
+Generate Word2Vec Cost: 0.000 s
+RNNModel(
+  (Embedding): Embedding(22651, 150)
+  (RNN): RNN(150, 300, batch_first=True)
+  (fc2): Linear(in_features=300, out_features=2, bias=True)
+) 
+Load Params...
+
+Model: RNN1
+Test Average loss:0.3819, Accuracy:85% (08515/10000)
+Test Acc: 0.8515
+
+RNNModel(
+  (Embedding): Embedding(22651, 150)
+  (RNN): RNN(150, 300, batch_first=True)
+  (fc2): Linear(in_features=300, out_features=2, bias=True)
+) 
+Load Params...
+
+Model: RNN2
+Test Average loss:0.3187, Accuracy:88% (08817/10000)
+Test Acc: 0.8817
+
+RNNModel(
+  (Embedding): Embedding(22651, 300)
+  (RNN): RNN(300, 500, batch_first=True)
+  (fc2): Linear(in_features=500, out_features=2, bias=True)
+) 
+Load Params...
+
+Model: RNN3
+Test Average loss:0.3560, Accuracy:87% (08670/10000)
+Test Acc: 0.8670
+
+LSTMModel(
+  (Embedding): Embedding(22651, 150)
+  (LSTM): LSTM(150, 300, batch_first=True, bidirectional=True)
+  (fc2): Linear(in_features=600, out_features=2, bias=True)
+) 
+Load Params...
+
+Model: LSTM1
+Test Average loss:0.2992, Accuracy:88% (08800/10000)
+Test Acc: 0.8800
+
+LSTMModel(
+  (Embedding): Embedding(22651, 150)
+  (LSTM): LSTM(150, 300, batch_first=True, bidirectional=True)
+  (fc2): Linear(in_features=600, out_features=2, bias=True)
+) 
+Load Params...
+
+Model: LSTM2
+Test Average loss:0.2874, Accuracy:89% (08874/10000)
+Test Acc: 0.8874
+
+LSTMModel(
+  (Embedding): Embedding(22651, 300)
+  (LSTM): LSTM(300, 500, batch_first=True, bidirectional=True)
+  (fc2): Linear(in_features=1000, out_features=2, bias=True)
+) 
+Load Params...
+
+Model: LSTM3
+Test Average loss:0.2819, Accuracy:90% (09017/10000)
+Test Acc: 0.9017
+
+LSTMModel(
+  (Embedding): Embedding(22651, 300)
+  (LSTM): LSTM(300, 300, batch_first=True, bidirectional=True)
+  (fc2): Linear(in_features=600, out_features=2, bias=True)
+) 
+Load Params...
+
+Model: BiLSTM
+Test Average loss:0.3568, Accuracy:89% (08892/10000)
+Test Acc: 0.8892
+
+GRUModel(
+  (Embedding): Embedding(22651, 150)
+  (GRU): GRU(150, 300, batch_first=True)
+  (fc2): Linear(in_features=300, out_features=2, bias=True)
+) 
+Load Params...
+
+Model: GRU1
+Test Average loss:0.2854, Accuracy:89% (08877/10000)
+Test Acc: 0.8877
+
+GRUModel(
+  (Embedding): Embedding(22651, 150)
+  (GRU): GRU(150, 300, batch_first=True)
+  (fc2): Linear(in_features=300, out_features=2, bias=True)
+) 
+Load Params...
+
+Model: GRU2
+Test Average loss:0.2663, Accuracy:89% (08941/10000)
+Test Acc: 0.8941
+
+GRUModel(
+  (Embedding): Embedding(22651, 300)
+  (GRU): GRU(300, 500, batch_first=True)
+  (fc2): Linear(in_features=500, out_features=2, bias=True)
+) 
+Load Params...
+
+Model: GRU3
+Test Average loss:0.2613, Accuracy:90% (08988/10000)
+Test Acc: 0.8988
+

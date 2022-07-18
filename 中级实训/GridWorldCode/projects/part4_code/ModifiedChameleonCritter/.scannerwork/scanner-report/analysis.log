@@ -1,0 +1,36 @@
+SonarQube plugins:
+  - Python Code Quality and Security 3.6.0.8488 (python)
+  - CSS Code Quality and Security 1.4.2.2002 (cssfamily)
+  - Go Code Quality and Security 1.8.3.2219 (go)
+  - JaCoCo 1.1.1.1157 (jacoco)
+  - Kotlin Code Quality and Security 2.2.0.499 (kotlin)
+  - JavaScript/TypeScript Code Quality and Security 8.4.0.16431 (javascript)
+  - Ruby Code Quality and Security 1.8.3.2219 (ruby)
+  - Scala Code Quality and Security 1.8.3.2219 (sonarscala)
+  - C# Code Quality and Security 8.29.0.36737 (csharp)
+  - Java Code Quality and Security 7.3.0.27589 (java)
+  - HTML Code Quality and Security 3.4.0.2754 (web)
+  - Flex Code Quality and Security 2.6.2.2641 (flex)
+  - XML Code Quality and Security 2.3.0.3155 (xml)
+  - PHP Code Quality and Security 3.20.0.8080 (php)
+  - VB.NET Code Quality and Security 8.29.0.36737 (vbnet)
+Global server settings:
+  - sonar.core.id=BF41A1F2-AXybEWYQM3IsQ68fiMEs
+  - sonar.core.startTime=2021-10-26T06:24:56-0700
+  - sonar.forceAuthentication=true
+Project server settings:
+Project scanner properties:
+  - sonar.host.url=http://localhost:9000
+  - sonar.java.binaries=./
+  - sonar.language=java
+  - sonar.login=******
+  - sonar.password=******
+  - sonar.projectBaseDir=/home/max/Desktop/se-training/GridWorldCode/projects/part4_code/ModifiedChameleonCritter
+  - sonar.projectKey=ModifiedChameleonCritter
+  - sonar.projectName=ModifiedChameleonCritter
+  - sonar.projectVersion=0.0.1-SNAPSHOT
+  - sonar.scanner.app=ScannerCLI
+  - sonar.scanner.appVersion=4.6.2.2472
+  - sonar.sourceEncoding=UTF-8
+  - sonar.sources=./
+  - sonar.working.directory=/home/max/Desktop/se-training/GridWorldCode/projects/part4_code/ModifiedChameleonCritter/.scannerwork

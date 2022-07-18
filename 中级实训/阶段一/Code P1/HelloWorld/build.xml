@@ -1,0 +1,44 @@
+<!-- 修改 from 中文教程 https://www.w3cschool.cn/junit/ -->
+<project name="JunitTest" default="test" basedir=".">
+	<property name="testdir" location="test" />
+	<property name="srcdir" location="src" />
+	<property name="full-compile" value="true" />
+	
+	<path id="classpath.base"/>
+	
+	<path id="classpath.test">
+		<pathelement location="/lib/junit-4.13.2.jar" />
+		<pathelement location="${testdir}" />
+		<pathelement location="${srcdir}" />
+		<path refid="classpath.base" />
+	</path>
+	
+	<target name="clean" > <!-- 清理 -->
+		<delete verbose="${full-compile}">
+			<fileset dir="${testdir}" includes="**/*.class" />
+		</delete>
+	</target>
+	
+	<target name="compile" depends="clean"> <!-- 编译 -->
+	  	<javac srcdir="${srcdir}" destdir="${testdir}" 
+		 	verbose="${full-compile}">
+			<classpath refid="classpath.test"/>
+	  	</javac>
+	</target>
+	
+	<target name="run" depends="compile">  <!-- 运行 -->
+		<java classname="HelloWorld">
+		<classpath>
+			<pathelement path="${testdir}"/>
+		</classpath>
+		</java>
+	</target>
+	
+	<target name="test" depends="compile"> <!-- 测试 -->
+	  	<junit>
+		 	<classpath refid="classpath.test" />
+		 	<formatter type="brief" usefile="false" />
+		 	<test name="TestHelloWorld" />
+	  	</junit>
+	</target>
+</project>
